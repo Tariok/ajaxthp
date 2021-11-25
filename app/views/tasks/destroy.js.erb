@@ -1,0 +1,54 @@
+(function(){
+
+console.log("<%= @task.title %>");
+const listItems = document.querySelectorAll("ul#class-list div ul > li");
+const listArray = Array.from(listItems);
+console.log(listArray);
+
+//const item = listArray.find((el) => {
+//  return el.innerHTML === "<%=@task.title%>";
+//});
+
+// item.remove();
+
+var found;
+
+for (var i = 0; i < listArray.length; i++) { 
+  console.log(listArray[i].textContent);
+  if (listArray[i].textContent === <%=@task.title%> ) {
+  // !: @task.title ne fonctionne pas avec le listArray.textContent
+    found = listArray[i];
+    break;
+  }
+}
+
+// console.log(found);
+
+found.remove();
+
+
+})()
+
+
+
+
+
+
+//tasksListEl.insertAdjacentHTML("beforeend", "<%= j render 'task_item', task: @task %>");
+
+//console.log(tasksListEl);
+
+
+//console.log(links);
+
+ // links.forEach((element) => {
+ //   element.addEventListener("ajax:success", () => {
+      // alert("The article was deleted.");
+ //   });
+ // });
+
+
+// ('.delete').bind('ajax:success',function(){
+// (this).closet('tr').fadeOut()
+//});
+

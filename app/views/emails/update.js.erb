@@ -1,0 +1,8 @@
+(function () {
+  const link = Array.from(document.getElementById("not-read-link-<%=params[:id]%>").children)[0]
+  console.log(link);
+
+    link.href.disabled;
+    link.innerHTML = "Votre message est considéré comme non-lu";
+
+})()

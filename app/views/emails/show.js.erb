@@ -1,0 +1,13 @@
+(function () {
+
+listEmail = document.querySelector("div.emails-show")
+
+listEmail.innerHTML = "<%= j render 'show', email: @email %>";
+
+const item = document.querySelector("div#email-item-<%=@email.id%>");
+item.style.backgroundColor = "LightGray";
+
+})()
+
+
+

@@ -1,0 +1,14 @@
+(function(){
+
+const listItems = document.querySelectorAll("ul#class-list > li");
+const item = Array.from(listItems).find((el) => {
+  return el.innerHTML === "<%= @task.category.title%>";
+});
+const categoryDiv = item.nextElementSibling;
+
+const tasksListEl = categoryDiv.querySelector("ul");
+
+tasksListEl.insertAdjacentHTML("beforeend", "<%= j render 'task_item', task: @task %>");
+
+})()
+

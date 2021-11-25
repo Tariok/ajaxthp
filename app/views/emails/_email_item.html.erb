@@ -1,0 +1,6 @@
+<div class="itemEl">
+<div> <p> <strong>Du :</strong> <%= email.updated_at %></p> </div>
+<div> <%= link_to "show", email_path(email.id) , remote: true %> </div>
+<div> <p class="email-object"> <strong>Objet :</strong> <%=email.object%></p> </div>
+<hr> 
+</div>

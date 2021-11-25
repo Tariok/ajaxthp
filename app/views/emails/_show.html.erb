@@ -1,0 +1,9 @@
+
+<div class="ouep">
+  <div> <p> <strong>Du :</strong> <%= email.updated_at %></p> </div>
+  <div> <p> <strong>Objet :</strong> <%= email.object %></p> </div>
+  <hr>
+  <div> <p> <%= email.body %></p> </div>
+  <div id="not-read-link-<%= email.id%>"> <%= link_to "Considérer comme non-lu", email_path(@email) , method: "put", remote: true %> </div>
+
+</div>

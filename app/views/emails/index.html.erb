@@ -1,0 +1,44 @@
+<h1>Emails#index</h1>
+
+<div class="mailBox">
+
+<%= link_to "Recevoir un email", emails_path, method: :post ,remote: true, class: 'btn btn-primary' %>
+<div class='container'>
+  <div class="row justify-content-around">
+      <div class="col-4">
+     <div class="emails-list">
+     
+      <%@emails.each do |email| %>
+      <div class="itemEl" id="email-item-<%=email.id%>"
+      style=<%=email.read ? 'background-color:grey' : "" %>  >
+      <div> <p>Du :<%= email.updated_at%></p> </div>
+      <div> <p class="email-object">Objet :<%= email.object %></p> </div>
+      <%= link_to "show", email_path(email.id) , remote: true , class: 'buttonclique' %>
+      <%= link_to "destroy", email_path(email.id) , method: "delete", remote: true , class: 'buttonclick' %>
+      <hr>
+    </div>
+<% end %>
+</div>
+    </div>
+    <div class="col-4">
+     <div class="emails-show">
+    
+    </div>
+  </div>
+
+<script>
+
+const itemsList = Array.from(document.getElementsByClassName("itemEl"));
+itemsList.forEach(el => email_id = el.id.replace(/\D/g, ""));
+console.log(email_id)
+let isRead = <%= @emails %>.find(c => x.id === email_id);
+console.log(isRead)
+
+
+
+</script>
+
+
+
+
+

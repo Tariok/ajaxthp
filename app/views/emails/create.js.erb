@@ -1,0 +1,11 @@
+(function(){
+
+const listEmail = document.querySelector("div.emails-list");
+console.log(listEmail);
+
+
+listEmail.insertAdjacentHTML("beforeend", "<%= j render 'email_item', email: @email %>");
+
+})()
+
+
